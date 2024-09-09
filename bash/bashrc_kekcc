@@ -1,8 +1,11 @@
 #!/bin/bash
 
+# Example of bashrc for HYPS on KEKCC
+
+
 #----- Prompt -----#
 export PS1="[\u\[\e[33m\]@\h\[\e[0m\] \W]$ "
-export LSCOLORS=gxdxcxbxfxegexabagacad
+
 
 #----- Aliases -----#
 alias ls='ls -v --color=auto'
@@ -18,19 +21,12 @@ alias ta='tmux a'
 alias tl='tmux ls'
 alias tks='tmux kill-session'
 
+
+#----- Environment Variables, Setings -----#
 export MAKEFLAGS=-j40
-
-module load gcc/830
-module load git/2260
-module load python/3.7 2>/dev/null
-
-. /opt/python-3.7/etc/profile.d/conda.sh
-conda activate py37
-
-#----- HYPS -----#
-export ROOTSYS=/group/had/sks/software/root/6.30.06
-source $ROOTSYS/bin/thisroot.sh
 export PATH=/group/had/sks/software/unpacker/hyps/bin:$PATH
+. /sw/packages/root/6.32.04/bin/thisroot.sh
+conda activate myenv
 
 #----- Custom Functions -----#
 # ls with cd
@@ -38,5 +34,3 @@ cd()
 {
 builtin cd "$@" && ls
 }
-
-export PATH=/group/had/sks/software/tmux:$PATH
