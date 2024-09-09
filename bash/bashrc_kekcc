@@ -24,7 +24,7 @@ alias tks='tmux kill-session'
 
 #----- Environment Variables, Setings -----#
 export MAKEFLAGS=-j40
-export PATH=/group/had/sks/software/unpacker/hyps/bin:$PATH
+export PATH=$PATH:/group/had/sks/software/unpacker/hyps/bin
 . /sw/packages/root/6.32.04/bin/thisroot.sh
 conda activate myenv
 
